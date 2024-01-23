@@ -2,8 +2,8 @@
 const express = require('express');
 const fs = require("fs");
 const app = express();
-const apiImport = require("./Develop/routes/api");
-const htmlImport = require("./Develop/routes/html");
+const apiImport = require("./routes/api");
+const htmlImport = require("./routes/html");
 
 //Get port from environment or default to 3001
 let port = process.env.PORT || 3001;
