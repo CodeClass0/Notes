@@ -24,15 +24,15 @@ apiRoute.post("/notes", (req,res) => {
         // old.push(JSON.parse(data));
         old = JSON.parse(data);
         let newNote = req.body;
-    
-    //push the new object to the array of old objects.
-       old.push(newNote); 
+        
+        //push the new object to the array of old objects.
+        old.push(newNote); 
 
-    //Write new array of objects to db
-    writeToFile("db/db.json", JSON.stringify(old));
-    
-    //respond with the newly updated data
-    res.json(old);
+        //Write new array of objects to db
+        writeToFile("db/db.json", JSON.stringify(old));
+        
+        //respond with the newly updated data
+        res.json(old);
     });
 
 });
