@@ -6,7 +6,7 @@ const apiImport = require("./routes/api");
 const htmlImport = require("./routes/html");
 
 //Get port from environment or default to 3001
-let port = process.env.PORT || 8080;
+let port = process.env.PORT || 3001;
 
 //Using middleware for data parsing
 app.use(express.json());
