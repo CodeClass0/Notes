@@ -11,9 +11,9 @@ htmlRoute.get("/notes", (req, res) =>{
 
 //GET * return index.html
 //NODE:PATH returns a path string
-htmlRoute.get("*", (req,res) => {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
-    console.log("htmlRoute GET index.html");
-});
+// htmlRoute.get("*", (req,res) => {
+//     res.sendFile(path.join(__dirname, "../public/index.html"));
+//     console.log("htmlRoute GET index.html");
+// });
 
 module.exports = htmlRoute;
