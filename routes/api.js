@@ -20,19 +20,17 @@ apiRoute.get('/notes', (req, res) => {
 apiRoute.post("/notes", (req,res) => {
     //Get old data as array of objects
     readFromFile("db/db.json").then((data) => {
+        console.log(JSON.parse(data));
+        console.log(req.body);
+        const prev = JSON.parse(data);
+        prev.push(req.body);
+        console.log(prev);
 
-        // old.push(JSON.parse(data));
-        old = JSON.parse(data);
-        let newNote = req.body;
+        // //Write new array of objects to db
+        writeToFile("db/db.json", JSON.stringify(prev));
         
-        //push the new object to the array of old objects.
-        old.push(newNote); 
-
-        //Write new array of objects to db
-        writeToFile("db/db.json", JSON.stringify(old));
-        
-        //respond with the newly updated data
-        res.json(old);
+        // //respond with the newly updated data
+        res.json(prev);
     });
 
 });
