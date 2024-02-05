@@ -4,7 +4,7 @@ const util = require('util');
 const readFromFile = util.promisify(fs.readFile);
 const writeToFile = util.promisify(fs.writeFile);
 const { v4: uuidv4 } = require('uuid');
-let old = [];
+
 
 
 //GET NOTES from db.json
@@ -20,9 +20,12 @@ apiRoute.get('/notes', (req, res) => {
 apiRoute.post("/notes", (req,res) => {
     //Get old data as array of objects
     readFromFile("db/db.json").then((data) => {
-        console.log(JSON.parse(data));
-        console.log(req.body);
+        // console.log(JSON.parse(data));
+        // console.log(req.body);
+        // console.log(JSON.parse(data));
         const prev = JSON.parse(data);
+        req.body.id = uuidv4();
+        // console.log(req.body);
         prev.push(req.body);
         console.log(prev);
 
