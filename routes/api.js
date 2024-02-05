@@ -38,8 +38,4 @@ apiRoute.post("/notes", (req,res) => {
 
 });
 
-
-
-
-
 module.exports = apiRoute;
